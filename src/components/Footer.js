@@ -39,7 +39,7 @@ const Footer = () => {
           </ul>
         </div>
         <hr className="my-6 border-gray-200 mx-auto" />
-        <span className="block text-sm text-gray-500 text-center">
+        <span className="block text-[0.6rem] md:text-sm text-gray-500 text-center">
           Weather Control from <span className="font-bold">Open Weather API</span>
         </span>
       </div>
