@@ -72,7 +72,7 @@ const Weather = (props) => {
       <div className="grid justify-items-center content-center w-full md:w-9/12 gap-10 bg-white md:border md:rounded-[5rem] p-2 md:p-6 md:py-24">
         <div className="mx-auto w-10/12 h-72 bg-gradient-to-t lg:bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-violet-600 to-[#323368] lg:from-amber-200 lg:via-violet-600 lg:to-[#323368] rounded-xl">
           <div className="flex justify-between h-full">
-            <div className="flex flex-col justify-between order-1 p-6 space-y-2 h-full">
+            <div className="flex flex-col justify-between order-1 p-4 md:p-6 space-y-2 h-full">
               <div>
                 <h1 className="text-left text-white text-3xl">{weather.name}</h1>
                 <p className="text-left text-[#F0C548] text-xs mt-2">
@@ -80,7 +80,7 @@ const Weather = (props) => {
               </p>
               </div>
               <div>
-                <h1 className="text-left text-[#F0C548] text-5xl">{(weather.main.temp/10).toFixed(1)}&deg;C</h1>
+                <h1 className="text-left text-[#F0C548] text-2xl md:text-5xl">{(weather.main.temp/10).toFixed(1)}&deg;C</h1>
                 <p className="text-left text-white capitalize text-xs mt-2">{weather.weather[0].description}</p>
               </div>
             </div>

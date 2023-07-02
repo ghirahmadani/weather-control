@@ -8,8 +8,7 @@ const Footer = () => {
     <footer className="w-full bg-white border-t border-gray-200">
       <div className="mx-auto p-12">
         <div className="flex items-center justify-center md:justify-between">
-          <a
-            href="https://lctipipb.com/"
+          <Link to='/team'
             className="flex items-center"
           >
             <img
@@ -20,7 +19,7 @@ const Footer = () => {
             <h1 className="self-center whitespace-nowrap text-[#323368] text-xl font-bold">
               Weather Control
             </h1>
-          </a>
+          </Link>
           <ul className="hidden md:flex md:flex-wrap md:items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
             <li>
               <Link to="/about" className="hover:underline mr-6 ">

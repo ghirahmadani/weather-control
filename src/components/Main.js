@@ -125,6 +125,7 @@ const Main = () => {
           Select a city or country to see the weather!
         </p>
         <form
+          data-netlify="true"
           className="flex justify-end items-center relative"
           onSubmit={(event) => onSearch(event)}
         >
