@@ -15,7 +15,7 @@ import IconK from '../resources/weather-icon/11.png'
 
 const Weather = (props) => {
   const {weather} = props;
-  
+
   const [forecast, setForecast] = useState();
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Weather = (props) => {
   },[weather])
 
   const handleForecast = () => {
-    axios.get(`${process.env.REACT_APP_WEATHER_URL}onecall?lat=${weather.coord.lat}&lon=${weather.coord.lon}&exclude=,hourly,minutely&units=metric&appid=${process.env.REACT_APP_WEATHER_KEY}`)
+    axios.get(`${process.env.REACT_APP_WEATHER_URL}onecall?lat=${weather.coord.lat}&lon=${weather.coord.lon}&units=metric&exclude=,hourly,minutely&appid=${process.env.REACT_APP_WEATHER_KEY}`)
     .then((res) => {
       setForecast(res.data);
     })
@@ -80,7 +80,7 @@ const Weather = (props) => {
               </p>
               </div>
               <div>
-                <h1 className="text-left text-[#F0C548] text-2xl md:text-5xl">{(weather.main.temp/10).toFixed(1)}&deg;C</h1>
+                <h1 className="text-left text-[#F0C548] text-2xl md:text-5xl">{(weather.main.temp).toFixed(1)}&deg;C</h1>
                 <p className="text-left text-white capitalize text-xs mt-2">{weather.weather[0].description}</p>
               </div>
             </div>
@@ -95,11 +95,11 @@ const Weather = (props) => {
         <div className="grid w-10/12 grid-cols-2 lg:grid-cols-4 gap-10">
           {forecast.daily.map((i, key) => {
             return(
-              <div key={i.weather.id} className={`grid justify-items-center content-center w-full bg-gradient-to-tl ${key === 0 ? 'from-[#F0C548] to-rose-300' : 'from-[#323368] to-violet-600'}  shadow-md rounded-[3rem] h-64 py-12 gap-2`}>
+              <div key={i.moonrise} className={`grid justify-items-center content-center w-full bg-gradient-to-tl ${key === 0 ? 'from-[#F0C548] to-rose-300' : 'from-[#323368] to-violet-600'}  shadow-md rounded-[3rem] h-64 py-12 gap-2`}>
                 <p className="text-center text-white text-xs">
                 {new Date(new Date().getTime()+(24 * (key+1) * 60 * 60 * 1000)).toLocaleString("en-US", { day : '2-digit', month:"long", weekday:"short"})}
                 </p>
-                <h1 className="text-left text-white text-3xl">{(i.temp.day).toFixed(1)}&deg;C</h1>
+                <h1 className="text-left text-white text-3xl">{(i.temp.min).toFixed(1)}&deg;C</h1>
                 <p className="text-center text-white text-xs capitalize">
                 {(i.weather[0].description)}
                 </p>

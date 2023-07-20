@@ -22,7 +22,7 @@ const MainPage = () => {
         <Hero click = {() => handleScroll(contentRef)}/>
         <Floating className='absolute' click = {() => handleScroll(mainRef)}/>
         <div className='w-full h-0' ref={contentRef}></div>
-        <Content ref={contentRef}/>
+        <Content/>
         <div className='w-full h-36' ref={mainRef}></div>
         <Main />
         <VideoContent/>
